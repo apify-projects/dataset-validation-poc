@@ -1,6 +1,8 @@
 import { Actor, Dataset } from 'apify';
 import { useState } from 'crawlee';
 
+// TODO: Implement the schema specs and also utilize it fully in stats
+// http://json-schema.org/draft-07/schema#
 interface ValidationError {
     instancePath: string; // '',
     schemaPath: string; // '#/required',
