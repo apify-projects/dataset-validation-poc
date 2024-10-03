@@ -66,6 +66,8 @@ export class ValidatedPusher {
     // 1. If there is a mix of valid and invalid items, the API (I think) will return an error and not store anything.
     // We need to parse this and store the valid items again.
     // 2. This also means the calculation of stats.validItems etc. is not correct since they can be mixed in one push.
+    // 3. Add offset index to the error object so it points to the item in the full dataset. Or we could just add the actual item to each error item
+    // 4. Should we create one more invalid dataset for only invalid items? Might be overkill since we already have the full dataset
 
     pushData = async (data: Item | Item[]): Promise<{ error?: PushDataError, invalidItems: InvalidItem[] }> => {
         let error: PushDataError | undefined;
